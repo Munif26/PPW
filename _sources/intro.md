@@ -1,4 +1,4 @@
-# Welcome to Pencarian dan Penambangan Data
+# Welcome to Pencarian dan Penambangan Web
 
 ## Tentang Pencarian dan Penambangan Web
 
@@ -45,10 +45,6 @@ Saya berharap konten dalam web Pencarian dan Penambangan Web ini dapat memberika
 Jika ada pertanyaan, masukan, atau ingin berdiskusi lebih lanjut mengenai materi yang terdapat dalam web ini, jangan ragu untuk menghubungi saya melalui email.
 
 Terima kasih sudah berkunjung. Semoga web ini dapat menjadi sumber wawasan dan dokumentasi pembelajaran yang bermanfaat! ✨✨✨
-
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
 
 ```{tableofcontents}
 ```
