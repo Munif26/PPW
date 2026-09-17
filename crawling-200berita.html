@@ -64,6 +64,7 @@
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PREPERING BERITA DARI DETIK.COM" href="preprocessing_data_berita.html" />
     <link rel="prev" title="CRAWLING BERITA DARI DETIK.COM" href="crawling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -217,6 +218,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="crawling.html"><strong>CRAWLING BERITA DARI DETIK.COM</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>CRAWLING 200 BERITA DARI DETIK.COM</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessing_data_berita.html"><strong>PREPERING BERITA DARI DETIK.COM</strong></a></li>
 </ul>
 
     </div>
@@ -940,6 +942,12 @@ Mengakses halaman 1: https://sport.detik.com/indeks?page=1
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sport - 9/100 [█-------------------] 9.00%
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sport - 10/100 [██------------------] 10.00%
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sport - 11/100 [██------------------] 11.00%
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">479</span>
@@ -959,126 +967,47 @@ Mengakses halaman 1: https://sport.detik.com/indeks?page=1
 <span class="g g-Whitespace">    </span><span class="mi">381</span>                 <span class="nb">print</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">382</span>                     <span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">❌ Gagal mengakses </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span>
 
-<span class="nn">Cell In[1], line 179,</span> in <span class="ni">get_article_content_and_title</span><span class="nt">(session, url)</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="n">content</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">paragraphs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> 
-<span class="g g-Whitespace">    </span><span class="mi">177</span>         <span class="k">return</span> <span class="n">title</span><span class="p">,</span> <span class="n">content</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span> 
-<span class="ne">--&gt; </span><span class="mi">179</span>     <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span> 
-<span class="g g-Whitespace">    </span><span class="mi">181</span>         <span class="nb">print</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>             <span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">❌ Error fetching </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\sessions.py:602,</span> in <span class="ni">Session.get</span><span class="nt">(self, url, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">594</span><span class="w"> </span><span class="sa">r</span><span class="sd">"""Sends a GET request. Returns :class:`Response` object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">595</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span><span class="sd"> :param url: URL for the new :class:`Request` object.</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span><span class="sd"> :param \*\*kwargs: Optional arguments that ``request`` takes.</span>
-<span class="g g-Whitespace">    </span><span class="mi">598</span><span class="sd"> :rtype: requests.Response</span>
-<span class="g g-Whitespace">    </span><span class="mi">599</span><span class="sd"> """</span>
-<span class="g g-Whitespace">    </span><span class="mi">601</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">"allow_redirects"</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">602</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\sessions.py:589,</span> in <span class="ni">Session.request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="n">send_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="s2">"timeout"</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="s2">"allow_redirects"</span><span class="p">:</span> <span class="n">allow_redirects</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="p">}</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span> <span class="n">send_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">589</span> <span class="n">resp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prep</span><span class="p">,</span> <span class="o">**</span><span class="n">send_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">return</span> <span class="n">resp</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\sessions.py:746,</span> in <span class="ni">Session.send</span><span class="nt">(self, request, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">743</span>         <span class="k">pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">745</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">stream</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">746</span>     <span class="n">r</span><span class="o">.</span><span class="n">content</span>
-<span class="g g-Whitespace">    </span><span class="mi">748</span> <span class="k">return</span> <span class="n">r</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\models.py:902,</span> in <span class="ni">Response.content</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">900</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">901</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">902</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">CONTENT_CHUNK_SIZE</span><span class="p">))</span> <span class="ow">or</span> <span class="sa">b</span><span class="s2">""</span>
-<span class="g g-Whitespace">    </span><span class="mi">904</span> <span class="bp">self</span><span class="o">.</span><span class="n">_content_consumed</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">905</span> <span class="c1"># don't need to release the connection; that's been handled by urllib3</span>
-<span class="g g-Whitespace">    </span><span class="mi">906</span> <span class="c1"># since we exhausted the data.</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\requests\models.py:820,</span> in <span class="ni">Response.iter_content.&lt;locals&gt;.generate</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">818</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="p">,</span> <span class="s2">"stream"</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">819</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">820</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">821</span>     <span class="k">except</span> <span class="n">ProtocolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">822</span>         <span class="k">raise</span> <span class="n">ChunkedEncodingError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\urllib3\response.py:1250,</span> in <span class="ni">HTTPResponse.stream</span><span class="nt">(self, amt, decode_content)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1234</span><span class="w"> </span><span class="sd">"""</span>
-<span class="g g-Whitespace">   </span><span class="mi">1235</span><span class="sd"> A generator wrapper for the read() method. A call will block until</span>
-<span class="g g-Whitespace">   </span><span class="mi">1236</span><span class="sd"> ``amt`` bytes have been read from the connection or until the</span>
-<span class="sd">   (...)   1247     'content-encoding' header.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1248</span><span class="sd"> """</span>
-<span class="g g-Whitespace">   </span><span class="mi">1249</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">supports_chunked_reads</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">1250</span>     <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_chunked</span><span class="p">(</span><span class="n">amt</span><span class="p">,</span> <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1251</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1252</span>     <span class="k">while</span> <span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1253</span>         <span class="ow">not</span> <span class="n">is_fp_closed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1254</span>         <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_decoded_buffer</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span>         <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_decoder</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decoder</span><span class="o">.</span><span class="n">has_unconsumed_tail</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span>     <span class="p">):</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\urllib3\response.py:1421,</span> in <span class="ni">HTTPResponse.read_chunked</span><span class="nt">(self, amt, decode_content)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1419</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1420</span>         <span class="k">break</span>
-<span class="ne">-&gt; </span><span class="mi">1421</span>     <span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_handle_chunk</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1422</span> <span class="n">decoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decode</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1423</span>     <span class="n">chunk</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1424</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1425</span>     <span class="n">flush_decoder</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1426</span>     <span class="n">max_length</span><span class="o">=</span><span class="n">amt</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1427</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1428</span> <span class="k">if</span> <span class="n">decoded</span><span class="p">:</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\site-packages\urllib3\response.py:1354,</span> in <span class="ni">HTTPResponse._handle_chunk</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1352</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1353</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1354</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>  <span class="c1"># type: ignore[union-attr]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1355</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">-</span> <span class="n">amt</span>
-<span class="g g-Whitespace">   </span><span class="mi">1356</span>     <span class="n">returned_chunk</span> <span class="o">=</span> <span class="n">value</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\http\client.py:642,</span> in <span class="ni">HTTPResponse._safe_read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">635</span> <span class="k">def</span><span class="w"> </span><span class="nf">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amt</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">636</span><span class="w">     </span><span class="sd">"""Read the number of bytes requested.</span>
-<span class="g g-Whitespace">    </span><span class="mi">637</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">638</span><span class="sd">     This function should be used when &lt;amt&gt; bytes "should" be present for</span>
-<span class="g g-Whitespace">    </span><span class="mi">639</span><span class="sd">     reading. If the bytes are truly not available (due to EOF), then the</span>
-<span class="g g-Whitespace">    </span><span class="mi">640</span><span class="sd">     IncompleteRead exception can be used to detect the problem.</span>
-<span class="g g-Whitespace">    </span><span class="mi">641</span><span class="sd">     """</span>
-<span class="ne">--&gt; </span><span class="mi">642</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">amt</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span>         <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">amt</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\socket.py:725,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">723</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">"cannot read from timed out object"</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">724</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">725</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">726</span> <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\ssl.py:1304,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1300</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1301</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1302</span>           <span class="s2">"non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1303</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1304</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1305</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1306</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python314\Lib\ssl.py:1138,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1136</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1137</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1138</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1139</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1140</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-
 <span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Memisahkan dataset berdasarkan kategori berita.</span>
+<span class="k">if</span> <span class="s2">"df"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"crawling_detik_sport_finance_200.csv"</span><span class="p">)</span>
+
+<span class="n">kolom_kategori</span> <span class="o">=</span> <span class="s2">"kategori_berita"</span>
+<span class="k">if</span> <span class="n">kolom_kategori</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"Kolom '</span><span class="si">{</span><span class="n">kolom_kategori</span><span class="si">}</span><span class="s2">' tidak ditemukan. "</span>
+        <span class="sa">f</span><span class="s2">"Kolom yang tersedia: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+
+<span class="n">kategori</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">kolom_kategori</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">df_sport</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">kategori</span> <span class="o">==</span> <span class="s2">"sport"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_finance</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">kategori</span> <span class="o">==</span> <span class="s2">"finance"</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># Simpan menjadi dua file terpisah.</span>
+<span class="n">df_sport</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"crawling_detik_sport_100.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8-sig"</span><span class="p">)</span>
+<span class="n">df_finance</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"crawling_detik_finance_100.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8-sig"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Jumlah berita sport: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_sport</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Jumlah berita finance: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_finance</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"File sport: crawling_detik_sport_100.csv"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"File finance: crawling_detik_finance_100.csv"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah berita sport: 100
+Jumlah berita finance: 100
+File sport: crawling_detik_sport_100.csv
+File finance: crawling_detik_finance_100.csv
 </pre></div>
 </div>
 </div>
@@ -1161,6 +1090,15 @@ Jumlah kata unik: 7183
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title"><strong>CRAWLING BERITA DARI DETIK.COM</strong></p>
       </div>
+    </a>
+    <a class="right-next"
+       href="preprocessing_data_berita.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>PREPERING BERITA DARI DETIK.COM</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
