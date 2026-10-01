@@ -36,7 +36,7 @@ Selamat datang dan mari belajar bersama! 🚀🌐
 
 **Prodi** : Teknik Informatika
 
-**Universitas** : Universitas Trunodsjoyo Madura
+**Universitas** : Universitas Trunodjoyo Madura
 
 **Email** : [muuhammadhaaniif26@gmail.com](mailto:muuhammadhaaniif26@gmail.com)
 

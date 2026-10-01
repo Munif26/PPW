@@ -7,3 +7,4 @@ chapters:
 - file: crawling
 - file: crawling-200berita
 - file: preprocessing_data_berita
+- file: skipgram
