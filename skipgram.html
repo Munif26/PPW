@@ -752,8 +752,8 @@ Implementasi pada dataset berita: melakukan pemeriksaan terhadap dataset, memper
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-----------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">gensim.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Word2Vec</span>
 
@@ -983,8 +983,8 @@ Target: 'teknologi'  --&gt;  Konteks: 'saham'
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4. Menampilkan hasil vektor angka untuk kata "saham"</span>
-<span class="n">kata_uji</span> <span class="o">=</span> <span class="s2">"saham"</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4. Menampilkan hasil vektor angka untuk kata "olahraga"</span>
+<span class="n">kata_uji</span> <span class="o">=</span> <span class="s2">"olahraga"</span>
 <span class="n">vektor_kata</span> <span class="o">=</span> <span class="n">model_skipgram</span><span class="o">.</span><span class="n">wv</span><span class="p">[</span><span class="n">kata_uji</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"=== HASIL SKIIP-GRAM (n=</span><span class="si">{</span><span class="n">n_vector</span><span class="si">}</span><span class="s2">, window=</span><span class="si">{</span><span class="n">window_size</span><span class="si">}</span><span class="s2">) ==="</span><span class="p">)</span>
@@ -995,21 +995,17 @@ Target: 'teknologi'  --&gt;  Konteks: 'saham'
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== HASIL SKIIP-GRAM (n=50, window=10) ===
-Ukuran dimensi vektor 'saham': 50
-Vektor angka untuk kata 'saham':
-[ 1.03917187e-02 -1.22206984e-02 -5.44638932e-03 -1.32354884e-03
- -8.92437820e-05 -1.82511080e-02  1.86909549e-03 -1.38313854e-02
-  9.72963125e-03  7.32671376e-03  1.68989021e-02  9.79791023e-03
- -5.34105767e-03  1.87024213e-02 -3.55974631e-03 -6.97269896e-03
-  1.62280966e-02 -5.18140150e-03 -1.69422925e-02 -1.22562540e-03
-  1.18287634e-02 -1.24261482e-02 -1.48092164e-03 -1.48074459e-02
-  7.45931873e-03 -9.74143506e-04 -6.79703336e-03 -1.09217735e-02
-  2.57847691e-03  6.80114841e-03  1.76189337e-02 -2.52064643e-03
- -1.35685969e-02  1.33082215e-02  5.18980389e-03  8.01700354e-03
- -1.61118675e-02 -7.50628766e-03  1.07117221e-02  1.32928016e-02
- -2.59412662e-03  1.21896118e-02  1.36692021e-02 -4.50011948e-03
-  1.59260537e-02 -8.46857019e-03 -1.04131391e-02  7.30305212e-03
-  5.46321040e-03 -1.44136287e-02]
+Ukuran dimensi vektor 'olahraga': 50
+Vektor angka untuk kata 'olahraga':
+[ 0.01330947 -0.01200367  0.01219596 -0.01970551  0.0118737   0.01147697
+  0.01121457  0.00659403 -0.00113732  0.00820661 -0.00891514  0.01122916
+  0.00222588 -0.00164337  0.00022425  0.00274965 -0.01850951 -0.01440812
+ -0.01018075 -0.0154188  -0.00241546  0.00673612  0.00617715 -0.00115615
+  0.0142032   0.00260944 -0.01683211  0.01059995  0.00298402  0.00538873
+  0.00261493  0.00214318 -0.01637734  0.00236829  0.0117965  -0.007842
+  0.00411353 -0.01876729 -0.00610003 -0.00253131  0.01930954 -0.01141661
+ -0.00893807 -0.00365885  0.01970662  0.01413612 -0.01861228 -0.01064242
+  0.01286698 -0.01766789]
 </pre></div>
 </div>
 </div>
@@ -1663,7 +1659,7 @@ Pelatihan Skip-gram Selesai!
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Memulai Preprocessing Skenario 2...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [00:38&lt;00:00,  5.15it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [18:11&lt;00:00,  5.46s/it]
 </pre></div>
 </div>
 </div>
@@ -1696,13 +1692,39 @@ Pelatihan Skip-gram Selesai!
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-10-01 11:25:50,364 : collecting all words and their counts
+2026-10-01 11:25:50,367 : PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2026-10-01 11:25:50,399 : collected 5441 word types from a corpus of 51707 raw words and 200 sentences
+2026-10-01 11:25:50,399 : Creating a fresh vocabulary
+2026-10-01 11:25:50,445 : Word2Vec lifecycle event {'msg': 'effective_min_count=1 retains 5441 unique words (100.00% of original 5441, drops 0)', 'datetime': '2026-10-01T11:25:50.445101', 'gensim': '4.4.0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22621-SP0', 'event': 'prepare_vocab'}
+2026-10-01 11:25:50,445 : Word2Vec lifecycle event {'msg': 'effective_min_count=1 leaves 51707 word corpus (100.00% of original 51707, drops 0)', 'datetime': '2026-10-01T11:25:50.445101', 'gensim': '4.4.0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22621-SP0', 'event': 'prepare_vocab'}
+2026-10-01 11:25:50,527 : deleting the raw counts dictionary of 5441 items
+2026-10-01 11:25:50,527 : sample=0.001 downsamples 34 most-common words
+2026-10-01 11:25:50,527 : Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 49535.516388055476 word corpus (95.8%% of prior 51707)', 'datetime': '2026-10-01T11:25:50.527270', 'gensim': '4.4.0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22621-SP0', 'event': 'prepare_vocab'}
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2. Melatih Model Skip-gram...
-Pelatihan Skip-gram Selesai!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2026-10-01 11:25:50,652 : estimated required memory for 5441 words and 50 dimensions: 4896900 bytes
+2026-10-01 11:25:50,666 : resetting layer weights
+2026-10-01 11:25:50,667 : Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2026-10-01T11:25:50.667805', 'gensim': '4.4.0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22621-SP0', 'event': 'build_vocab'}
+2026-10-01 11:25:50,667 : Word2Vec lifecycle event {'msg': 'training model with 4 workers on 5441 vocabulary and 50 features, using sg=1 hs=0 sample=0.001 negative=5 window=3 shrink_windows=True', 'datetime': '2026-10-01T11:25:50.667805', 'gensim': '4.4.0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22621-SP0', 'event': 'train'}
+2026-10-01 11:25:50,903 : EPOCH 0: training on 51707 raw words (49458 effective words) took 0.2s, 217808 effective words/s
+2026-10-01 11:25:51,167 : EPOCH 1: training on 51707 raw words (49502 effective words) took 0.2s, 200731 effective words/s
+2026-10-01 11:25:51,425 : EPOCH 2: training on 51707 raw words (49535 effective words) took 0.3s, 196121 effective words/s
+2026-10-01 11:25:51,727 : EPOCH 3: training on 51707 raw words (49400 effective words) took 0.3s, 169070 effective words/s
+2026-10-01 11:25:52,057 : EPOCH 4: training on 51707 raw words (49510 effective words) took 0.3s, 151874 effective words/s
+2026-10-01 11:25:52,067 : Word2Vec lifecycle event {'msg': 'training on 258535 raw words (247405 effective words) took 1.4s, 177715 effective words/s', 'datetime': '2026-10-01T11:25:52.067243', 'gensim': '4.4.0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22621-SP0', 'event': 'train'}
+2026-10-01 11:25:52,068 : Word2Vec lifecycle event {'params': 'Word2Vec&lt;vocab=5441, vector_size=50, alpha=0.025&gt;', 'datetime': '2026-10-01T11:25:52.068866', 'gensim': '4.4.0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.22621-SP0', 'event': 'created'}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pelatihan Skip-gram Selesai!
 
 3. Membuat Vektor Rata-rata Dokumen (Mean Pooling)...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [00:00&lt;00:00, 773.52it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 200/200 [00:00&lt;00:00, 692.12it/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Seluruh proses Skenario 2 selesai!
@@ -1872,6 +1894,69 @@ weighted avg       0.75      0.75      0.75        40
 <p>Hasil evaluasi perlu dipahami berdasarkan batasan dari eksperimen yang dilakukan. Dataset yang digunakan memiliki jumlah artikel yang relatif terbatas jika dibandingkan dengan korpus berukuran besar yang umumnya diperlukan untuk menghasilkan embedding kata yang lebih stabil. Penggunaan <code class="docutils literal notranslate"><span class="pre">min_count=1</span></code> juga membuat kata yang hanya muncul sedikit atau satu kali tetap dimasukkan ke dalam kosakata, meskipun jumlah konteks yang tersedia untuk mempelajari representasinya terbatas. Selain itu, proses <strong>average pooling</strong> pada vektor kata menghilangkan informasi mengenai urutan kata dalam dokumen karena seluruh token dirangkum melalui nilai rata-rata.</p>
 <p>Dari sisi metodologi, evaluasi yang lebih ketat dapat dilakukan dengan membagi dokumen menjadi data latih dan data uji <strong>sebelum</strong> proses pelatihan Word2Vec. Model embedding kemudian dilatih hanya menggunakan dokumen pada data latih, sedangkan dokumen uji direpresentasikan menggunakan embedding yang telah diperoleh dari data latih. Token pada data uji yang tidak terdapat dalam kosakata juga perlu ditangani secara eksplisit. Pendekatan tersebut dapat mengurangi kemungkinan informasi dari data uji ikut memengaruhi proses pembentukan embedding. Perubahan ini merupakan rekomendasi metodologis dan tidak diterapkan pada kode notebook yang digunakan.</p>
 <p>Dalam penyusunan kesimpulan akhir, nilai <strong>accuracy, precision, recall, F1-score</strong>, dan hasil <strong>confusion matrix</strong> sebaiknya diambil langsung dari keluaran aktual notebook. Apabila metrik menunjukkan adanya perbedaan performa antara Skenario 1 dan Skenario 2, perbedaan tersebut dapat dijelaskan sebagai hasil dari eksperimen pada dataset yang digunakan. Namun, hasil tersebut tetap perlu disertai keterbatasan penelitian dan tidak dapat secara langsung digeneralisasikan sebagai gambaran kinerja Word2Vec secara umum.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"=== Vektor Kata Hasil Skip-gram ==="</span><span class="p">)</span>
+<span class="n">model_vektor</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"model_skenario_1"</span><span class="p">,</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"model_skipgram"</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">model_vektor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Jalankan sel pelatihan Skip-gram terlebih dahulu."</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">model_vektor</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">index_to_key</span><span class="p">:</span>
+    <span class="n">kata_uji_hasil</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">kata</span> <span class="k">for</span> <span class="n">kata</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"saham"</span><span class="p">,</span> <span class="s2">"bank"</span><span class="p">,</span> <span class="s2">"pasar"</span><span class="p">)</span> <span class="k">if</span> <span class="n">kata</span> <span class="ow">in</span> <span class="n">model_vektor</span><span class="o">.</span><span class="n">wv</span><span class="p">),</span>
+        <span class="n">model_vektor</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">index_to_key</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">vektor_kata_hasil</span> <span class="o">=</span> <span class="n">model_vektor</span><span class="o">.</span><span class="n">wv</span><span class="p">[</span><span class="n">kata_uji_hasil</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Kata: </span><span class="si">{</span><span class="n">kata_uji_hasil</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dimensi: </span><span class="si">{</span><span class="n">vektor_kata_hasil</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Vektor kata: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">vektor_kata_hasil</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Vocabulary model kosong; tidak ada vektor kata untuk ditampilkan."</span><span class="p">)</span>
+
+<span class="n">vektor_dokumen_df</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"df_skenario_2_X"</span><span class="p">,</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"df_skenario_1_X"</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">vektor_dokumen_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Bentuk matriks vektor dokumen: </span><span class="si">{</span><span class="n">vektor_dokumen_df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">vektor_dokumen_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Vektor dokumen pertama: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">vektor_dokumen_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Vektor Kata Hasil Skip-gram ===
+Jalankan sel pelatihan Skip-gram terlebih dahulu.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">joblib</span>
+
+<span class="n">model_skipgram_simpan</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"model_skenario_1"</span><span class="p">)</span>
+<span class="n">model_nb_simpan</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"model_nb_skenario1"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">model_skipgram_simpan</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">model_nb_simpan</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Jalankan sel pelatihan Skip-gram dan Gaussian Naive Bayes terlebih dahulu."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">path_skipgram</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"model_skipgram_skenario2.model"</span><span class="p">)</span>
+    <span class="n">path_naive_bayes</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"model_skipgram_naive_bayes_skenario2.joblib"</span><span class="p">)</span>
+
+    <span class="n">model_skipgram_simpan</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path_skipgram</span><span class="p">))</span>
+    <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model_nb_simpan</span><span class="p">,</span> <span class="n">path_naive_bayes</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Model Skip-gram tersimpan: </span><span class="si">{</span><span class="n">path_skipgram</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Model Skip-gram + Naive Bayes tersimpan: </span><span class="si">{</span><span class="n">path_naive_bayes</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model Skip-gram tersimpan: C:\Users\LENOVO\Downloads\PPW\PPW\tugas\model_skipgram_skenario2.model
+Model Skip-gram + Naive Bayes tersimpan: C:\Users\LENOVO\Downloads\PPW\PPW\tugas\model_skipgram_naive_bayes_skenario2.joblib
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
