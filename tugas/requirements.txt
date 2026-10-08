@@ -1,5 +1,8 @@
-jupyter-book
-matplotlib
-numpy
-tqdm
-gensim
+numpy==2.4.6
+gensim==4.4.0
+streamlit==1.65.0
+joblib==1.6.0
+scikit-learn==1.9.1
+Sastrawi
+requests
+beautifulsoup4
