@@ -449,6 +449,13 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skenario-2-angka-dipertahankan"><strong>Skenario 2: Angka Dipertahankan</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><strong>Kesimpulan</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-aplikasi-klasifikasi-berita-berbasis-streamlit"><strong>Demo Aplikasi Klasifikasi Berita Berbasis Streamlit</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-dan-kategori-klasifikasi">Tujuan dan kategori klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menggunakan-aplikasi">Cara menggunakan aplikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-pemrosesan">Alur pemrosesan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batasan-demo">Batasan demo</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -752,8 +759,8 @@ Implementasi pada dataset berita: melakukan pemeriksaan terhadap dataset, memper
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">-----------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">gensim.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Word2Vec</span>
 
@@ -1958,6 +1965,35 @@ Model Skip-gram + Naive Bayes tersimpan: C:\Users\LENOVO\Downloads\PPW\PPW\tugas
 </div>
 </div>
 </section>
+<section id="demo-aplikasi-klasifikasi-berita-berbasis-streamlit">
+<h2><strong>Demo Aplikasi Klasifikasi Berita Berbasis Streamlit</strong><a class="headerlink" href="#demo-aplikasi-klasifikasi-berita-berbasis-streamlit" title="Link to this heading">#</a></h2>
+<p>Selain eksperimen dan evaluasi model pada notebook ini, model Skip-gram dan Gaussian Naive Bayes juga digunakan dalam aplikasi demo berbasis <strong>Streamlit</strong>. Aplikasi ini memungkinkan pengguna mencoba klasifikasi artikel <a class="reference external" href="http://Detik.com">Detik.com</a> melalui antarmuka web tanpa menjalankan ulang proses pelatihan model.</p>
+<section id="tujuan-dan-kategori-klasifikasi">
+<h3>Tujuan dan kategori klasifikasi<a class="headerlink" href="#tujuan-dan-kategori-klasifikasi" title="Link to this heading">#</a></h3>
+<p>Demo ini menunjukkan penerapan model yang telah disimpan untuk mengelompokkan artikel ke dalam salah satu dari dua kategori, yaitu <strong>Sport</strong> dan <strong>Finance</strong>. Aplikasi memuat model Skip-gram dan Gaussian Naive Bayes dari berkas yang telah disiapkan. Proses untuk setiap artikel merupakan inferensi atau prediksi, bukan pelatihan ulang model.</p>
+</section>
+<section id="cara-menggunakan-aplikasi">
+<h3>Cara menggunakan aplikasi<a class="headerlink" href="#cara-menggunakan-aplikasi" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Buka aplikasi Streamlit yang telah di-deploy, atau jalankan aplikasi secara lokal dari direktori utama proyek</p></li>
+<li><p>Masukkan URL artikel lengkap dengan protokol <code class="docutils literal notranslate"><span class="pre">https://</span></code> dari domain <code class="docutils literal notranslate"><span class="pre">detik.com</span></code> atau subdomain resminya, misalnya <code class="docutils literal notranslate"><span class="pre">sport.detik.com</span></code> atau <code class="docutils literal notranslate"><span class="pre">finance.detik.com</span></code>.</p></li>
+<li><p>Pilih tombol <strong>Analisis berita</strong> dan tunggu hingga pengambilan artikel serta klasifikasi selesai.</p></li>
+<li><p>Amati kategori prediksi dan tingkat keyakinan. Buka bagian <strong>Jelajahi teks yang dianalisis</strong> untuk memeriksa isi artikel dan token hasil preprocessing.</p></li>
+</ol>
+<blockquote>
+<div><p><strong>Tautan deployment:</strong> tambahkan URL Streamlit Community Cloud di bagian ini setelah aplikasi berhasil di-deploy. Pastikan tautan dapat dibuka saat demo akan digunakan atau dipresentasikan; ketersediaannya bergantung pada status deployment dan koneksi internet.</p>
+</div></blockquote>
+</section>
+<section id="alur-pemrosesan">
+<h3>Alur pemrosesan<a class="headerlink" href="#alur-pemrosesan" title="Link to this heading">#</a></h3>
+<p>Aplikasi mengambil judul dan isi artikel dari halaman berita. Teks kemudian diubah menjadi huruf kecil, tanda baca dibersihkan, stopword bahasa Indonesia dihapus, lalu kata dinormalisasi menggunakan stemming Sastrawi. Angka dipertahankan, sesuai konfigurasi preprocessing skenario 2.</p>
+<p>Token hasil preprocessing dicocokkan dengan kosakata Skip-gram. Vektor kata yang tersedia dirata-ratakan (<em>mean pooling</em>) untuk membentuk satu vektor dokumen. Vektor ini diberikan kepada Gaussian Naive Bayes untuk menghasilkan prediksi <strong>Sport</strong> atau <strong>Finance</strong>. Aplikasi menampilkan kategori prediksi, tingkat keyakinan, probabilitas kedua kategori, serta teks dan token yang diproses.</p>
+</section>
+<section id="batasan-demo">
+<h3>Batasan demo<a class="headerlink" href="#batasan-demo" title="Link to this heading">#</a></h3>
+<p>Demo ini merupakan sarana untuk mencoba penerapan model pada artikel baru, bukan pengganti evaluasi ilmiah pada data uji. Kategori yang tersedia terbatas pada <strong>Sport</strong> dan <strong>Finance</strong>, sehingga artikel di luar kedua topik tersebut tetap akan dipaksa masuk ke salah satu kategori. Tingkat keyakinan adalah keluaran probabilitas model dan tidak menjamin klasifikasi selalu benar. Hasil juga bergantung pada isi artikel yang berhasil diambil, kecocokan token dengan kosakata Skip-gram, serta ketersediaan situs dan aplikasi saat digunakan.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2048,6 +2084,13 @@ Model Skip-gram + Naive Bayes tersimpan: C:\Users\LENOVO\Downloads\PPW\PPW\tugas
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skenario-2-angka-dipertahankan"><strong>Skenario 2: Angka Dipertahankan</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan"><strong>Kesimpulan</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-aplikasi-klasifikasi-berita-berbasis-streamlit"><strong>Demo Aplikasi Klasifikasi Berita Berbasis Streamlit</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-dan-kategori-klasifikasi">Tujuan dan kategori klasifikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menggunakan-aplikasi">Cara menggunakan aplikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-pemrosesan">Alur pemrosesan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#batasan-demo">Batasan demo</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
